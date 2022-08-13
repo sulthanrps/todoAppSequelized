@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <style>
+        body {
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        th, td {
+            padding: 15px;
+        }
+
+        .add-btn, .c-btn, .uc-btn, .del-btn {
+            padding: 7px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .add-btn {
+            background-color: rgb(234, 170, 52);
+        }
+
+        .c-btn {
+            background-color: rgb(138, 224, 196);
+        }
+
+        .uc-btn {
+            background-color: bisque;
+        }
+
+        .del-btn {
+            background-color: rgb(219, 17, 17);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo App</h1>
+    <a href="/add" class="add-btn">Add Task</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Content</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach((el, idx) => { %>
+                <tr>
+                    <td><%= idx+1 %></td>
+                    <td><%= el.content %> </td>
+                    <td><%= el.status %> </td>
+                    <td>
+                        <% if (el.status == 'complete') { %>
+                                <a href="/uncomplete/<%= el.id %>" class="uc-btn">Uncomplete</a>
+                        <% } else { %>
+                                <a href="/complete/<%= el.id %>" class="c-btn">Complete</a>
+                        <% } %>
+                        <a href="/delete/<%= el.id %>" class="del-btn">Delete</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <style>
+        input, button {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Task</h1>
+    <form action="/add" method="post">
+        <label for="content">Content</label>
+        <input type="text" name="content">
+
+        <label for="content">Status</label>
+        <input type="text" name="status" value="uncomplete" readonly>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
