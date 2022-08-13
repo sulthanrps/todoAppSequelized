@@ -1,0 +1,18 @@
+[
+    {
+        "content": "Pull Request Github",
+        "status": "complete"
+    },
+    {
+        "content": "Continue working on the todo app project",
+        "status": "uncomplete"
+    },
+    {
+        "content": "Have a quality time in weekend",
+        "status": "uncomplete"
+    },
+    {
+        "content": "Get a perfect score at live code",
+        "status": "complete"
+    }
+]
